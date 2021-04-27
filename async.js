@@ -27,7 +27,7 @@ function processRequest(response){
 // d
 
 // here makeRequest has Google param so thats why it called here
-makeRequest('lkfnid').then((response)=>{
+makeRequest('Google').then((response)=>{
     console.log(" hey connecting...")
     // here processRequest function is calling
     return processRequest(response)
@@ -36,6 +36,30 @@ makeRequest('lkfnid').then((response)=>{
     // here only processRequest function's resolved response will be generated
 }).then(processedResponse=>{
     console.log(processedResponse)
-}).catch(response=>{
-    console.log(response)
+}).catch(err=>{
+    console.log(err)
 })
+
+
+
+
+
+
+// here in assync we use syntax "async function function name"
+// we use await "function_name" to get the output if resolve condition are met
+
+async function doWork(){
+    try{
+        const response = await makeRequest('Google')
+        console.log("response is received")
+        const processedResponse = await processRequest(response)
+        console.log(processedResponse)
+
+    }catch(err){
+        console.log(err)
+
+    }
+
+   
+}
+doWork()
