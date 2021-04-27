@@ -47,6 +47,9 @@ makeRequest('Google').then((response)=>{
 
 // here in assync we use syntax "async function function name"
 // we use await "function_name" to get the output if resolve condition are met
+// to handle the reject output we will use try and catch function
+
+// here .catch function is replaced by try and catch
 
 async function doWork(){
     try{
